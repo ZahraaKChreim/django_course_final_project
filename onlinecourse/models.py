@@ -124,7 +124,7 @@ class Question(models.Model):
     # Indicate if this choice of the question is a correct one or not
     # Other fields and methods you would like to design
 class Choice(models.Model):
-    question = models.ManyToManyField(Question)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(null=False ,max_length=200)
     is_correct = models.BooleanField()
 
